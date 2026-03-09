@@ -1,0 +1,15 @@
+{
+  "name": "novakid-to-google-calendar",
+  "version": "1.0.0",
+  "description": "Chrome extension that syncs NovaKid English lesson schedule to Google Calendar",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "build:dev": "node build.js --target dev",
+    "build:store": "node build.js --target store",
+    "clean": "node -e \"const fs=require('fs'); fs.rmSync('dist',{recursive:true,force:true}); console.log('dist/ cleaned')\""
+  },
+  "author": "radzisz",
+  "license": "MIT",
+  "keywords": ["chrome-extension", "novakid", "google-calendar", "sync"]
+}

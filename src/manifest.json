@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8eif7bYWVuEdB1S9+daVL26bom1ny2614MQ0ZwA2YM5m84FbFzYlUK9PLPqn0zYM8TWBkD1L66oCbqzVO5fXe2MyOwBY08qfrmf7szgEqWBjX2yq1ZwdzvT79JQHs5g4xl6yru5j/R1BtQOzTp5CcLrBQ7U2sbkvUoBfm6muc7A+SLdcKwTCstb6J9202bOXa4ol5phLD2wNl7YpbJ98NZdnQiXwtTYJjSejxcU5nlN7F6v+wjKKXFNw6SxRiEGsw4LxNgqeqUi9ZaC60TyNY1zW3jeTf7SRKRAS+nvXdxAle8kslbNUWMCgMorE0IXDDy7DI8SaLGiFszNPwlEvSwIDAQAB",
+  "name": "__MSG_appName__",
+  "version": "1.0.0",
+  "description": "__MSG_appDescription__",
+  "default_locale": "en",
+  "permissions": [
+    "identity",
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://school.novakidschool.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://school.novakidschool.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "oauth2": {
+    "client_id": "1053248445768-n57un08t5m4vklq7kiidn30j390bbioo.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.events",
+      "https://www.googleapis.com/auth/calendar.readonly"
+    ]
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

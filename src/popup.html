@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div class="main-card">
+  <!-- Header -->
+  <div class="header">
+    <h1 id="appTitle"></h1>
+    <div id="langSwitch"></div>
+  </div>
+
+  <!-- Structure warning -->
+  <div id="structureWarning" class="warning-banner">
+    <span class="warn-icon">&#9888;</span>
+    <span id="structureWarningText"></span>
+  </div>
+
+  <!-- Loader (while waiting for page) -->
+  <div id="loader" class="loader" style="display:none">
+    <div class="spinner"></div>
+    <span id="loaderText"></span>
+  </div>
+
+  <!-- Status (errors only) -->
+  <div id="status" class="status"></div>
+
+  <!-- Lessons (collapsible, collapsed by default after auto-scan) -->
+  <div id="lessonsSection" class="section">
+    <div class="section-header" id="lessonsHeader">
+      <span id="lessonsHeaderText"></span>
+      <span class="section-toggle">&#9660;</span>
+    </div>
+    <div class="section-body" id="lessonsBody"></div>
+  </div>
+
+  <!-- Settings (collapsible) -->
+  <div id="settingsSection" class="section">
+    <div class="section-header" id="settingsHeader">
+      <span id="settingsHeaderText"></span>
+      <span class="section-toggle">&#9660;</span>
+    </div>
+    <div class="section-body" id="settingsBody"></div>
+  </div>
+
+  <!-- Auto-sync chip + action button -->
+  <div id="bottomArea" style="display:none">
+    <div id="autoSyncChip" class="auto-sync-chip">
+      <span id="autoSyncLabel"></span>
+      <div class="toggle-switch" id="autoSyncToggle">
+        <div class="toggle-knob"></div>
+      </div>
+    </div>
+    <div id="autoSyncHint" class="auto-sync-hint"></div>
+    <button id="btnAction" class="btn btn-blue"></button>
+    <button id="btnDisconnect" class="btn-disconnect" style="display:none"></button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" id="footer">
+    <a id="linkCoffee" href="#" target="_blank">&#9749; Buy me a coffee</a>
+    <span class="footer-sep">|</span>
+    <a id="linkRate" href="#" target="_blank">&#11088; Rate</a>
+  </div>
+</div><!-- /main-card -->
+
+  <script src="i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

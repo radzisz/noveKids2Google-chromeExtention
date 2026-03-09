@@ -1,0 +1,8 @@
+{
+  "appName": {
+    "message": "NovaKid do Google Calendar"
+  },
+  "appDescription": {
+    "message": "Automatycznie synchronizuje plan lekcji NovaKid z Google Calendar. Obsługuje wiele dzieci z kodowaniem kolorami."
+  }
+}

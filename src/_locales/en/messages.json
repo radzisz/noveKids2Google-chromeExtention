@@ -1,0 +1,8 @@
+{
+  "appName": {
+    "message": "NovaKid to Google Calendar"
+  },
+  "appDescription": {
+    "message": "Automatically syncs NovaKid English lesson schedule to Google Calendar. Supports multiple children with color coding."
+  }
+}
