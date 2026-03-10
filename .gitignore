@@ -1,3 +1,8 @@
 dist/
 node_modules/
 .10timesdev/
+# 10timesdev orchestrator files
+.10timesdev
+agent-output.log
+.agent-container
+messages.jsonl
