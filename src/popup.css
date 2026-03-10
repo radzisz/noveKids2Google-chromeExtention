@@ -30,6 +30,9 @@ body {
   border-radius: 0;
   padding: 16px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 580px;
 }
 
 /* ── Header ── */
@@ -40,6 +43,7 @@ body {
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
 }
 .header h1 {
   font-size: 15px;
@@ -153,6 +157,13 @@ body {
 .btn.btn-success { background: var(--green); }
 .btn.btn-error { background: var(--red); }
 
+/* ── Scrollable content area ── */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
 /* ── Collapsible sections ── */
 .section {
   border: 1px solid #eaeaea;
@@ -185,14 +196,9 @@ body {
 .section.collapsed .section-toggle { transform: rotate(-90deg); }
 .section-body {
   padding: 8px 10px;
-  max-height: 300px;
-  overflow-y: auto;
-  transition: max-height 0.25s ease;
 }
 .section.collapsed .section-body {
-  max-height: 0;
-  padding: 0 10px;
-  overflow: hidden;
+  display: none;
 }
 
 /* ── Lesson cards ── */
@@ -289,7 +295,7 @@ body {
 .color-circle.color-none.selected::after { content: ''; }
 
 /* ── Bottom area ── */
-#bottomArea { margin-top: 10px; }
+#bottomArea { margin-top: 10px; flex-shrink: 0; }
 
 /* ── Auto-sync chip ── */
 .auto-sync-chip {
@@ -425,6 +431,7 @@ body {
   padding-top: 10px;
   border-top: 1px solid #f0f0f0;
   font-size: 11px;
+  flex-shrink: 0;
 }
 .footer a {
   color: var(--text-light);
