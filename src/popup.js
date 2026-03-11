@@ -155,6 +155,9 @@ function updateBottomArea() {
   }
   bottomArea.style.display = 'block';
 
+  btnAction.disabled = false;
+  btnAction.className = 'btn btn-blue';
+
   if (isLoggedIn) {
     btnAction.textContent = I18n.t('syncButton');
     btnAction.onclick = doSync;
@@ -262,10 +265,11 @@ I18n.init().then(async () => {
 // ── Settings persistence ──
 async function loadSavedSettings() {
   return new Promise((resolve) => {
-    chrome.storage.local.get(['childSettings', 'knownChildren', 'eventPrefix'], (data) => {
+    chrome.storage.local.get(['childSettings', 'knownChildren', 'eventPrefix', 'scannedLessons'], (data) => {
       if (data.childSettings) childSettings = data.childSettings;
       if (data.knownChildren) knownChildren = data.knownChildren;
       if (data.eventPrefix !== undefined) eventPrefix = data.eventPrefix;
+      if (data.scannedLessons) scannedLessons = data.scannedLessons;
       resolve();
     });
   });
@@ -522,6 +526,7 @@ async function doScan(tab) {
     chrome.runtime.sendMessage({ type: 'structureOk' });
 
     scannedLessons = lessons;
+    chrome.storage.local.set({ scannedLessons });
     for (const l of scannedLessons) {
       if (l.childName === '__unknown__') l.childName = I18n.t('unknownChild');
     }
